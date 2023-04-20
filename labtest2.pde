@@ -1,5 +1,7 @@
 //C22307573 Rachel Appleyard
-
+IntList colourH;
+IntList colourS;
+IntList colourB;
 Flag flag1;
 void setup()
 {
@@ -7,6 +9,24 @@ void setup()
   background(255);
   colorMode(HSB);
   rectMode(CENTER);
+  
+  colourH = new IntList();
+  colourH.append(0);
+  colourH.append(20);
+  colourH.append(210);
+  colourH.append(40);
+  
+  colourS = new IntList();
+  colourS.append(0);
+  colourS.append(100);
+  colourS.append(85);
+  colourS.append(255);
+  
+  colourB = new IntList();
+  colourB.append(0);
+  colourB.append(100);
+  colourB.append(255);
+  colourB.append(240);
   
   flag1 = new Flag();  
 }
@@ -38,8 +58,8 @@ class Flag
     for(int i = 0; i<= 3; i ++)
     {
      
-      fill(k,255,255);
-      stroke(0);
+      fill(colourH.get(i),colourS.get(i),colourB.get(i));
+      stroke(colourH.get(i),colourS.get(i),colourB.get(i));
       triangle(x-i*(h/2),(h*3)+margin2, x-w/2, margin2+i*(h/2), x-w/2,(h*6)+margin2-i*(h/2));
       if (k==1)
       {k = 40;}
