@@ -72,10 +72,10 @@ class Flag
 { 
   int x, y;
   int c=10;
-  int h = 30;
-  int w = 500;
+  int h = 40;
+  int w = 600;
   int margin = h/3;
-  int margin2 =(y/100)*85;
+  int margin2 =15;
   int k = 1;
   
   Flag(int xpos, int ypos)
@@ -104,7 +104,7 @@ class Flag
      
       fill(colourH.get(i),colourS.get(i),colourB.get(i));
       stroke(colourH.get(i),colourS.get(i),colourB.get(i));
-      triangle(x-i*(h/2),y+(h*3)+margin2, x-w/2, y+margin2+i*(h/2), x-w/2,y+(h*6)+margin2-i*(h/2));
+      triangle(x-i*(h/2),y+(h*3)-margin2, x-w/2, y-margin+i*(h/2), x-w/2,y+(h*6)-margin-i*(h/2));
       if (k==1)
       {k = 40;}
       else if (k==40)
@@ -117,7 +117,7 @@ class Flag
     noFill();
     strokeWeight(5);
     stroke(220,255,255);
-    circle(x-w/3,(y+h*3)+margin2,h*1);
+    circle(x-w/3,y+h+h+h/2,h*1);
     strokeWeight(1);
   }
 }
