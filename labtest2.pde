@@ -4,6 +4,8 @@ IntList colourS;
 IntList colourB;
 IntList xCords;
 IntList yCords;
+IntList flagWidth;
+IntList flagHeight;
 Flag flag1;
 Flag flag2;
 Flag flag3;
@@ -55,33 +57,45 @@ void setup()
     yCords.append(index);
   }
   
+  flagWidth = new IntList();
+   for (int i = 0; i < 10; i++)
+  {
+    int index = int(random(100,600));
+    flagWidth.append(index);
+  }
   
+  flagHeight = new IntList();
+   for (int i = 0; i < 10; i++)
+  {
+    int index = int(random(10,100));
+    flagHeight.append(index);
+  }
   
-  flag1 = new Flag(xCords.get(0), yCords.get(0));  
-  flag2 = new Flag(xCords.get(1), yCords.get(1));  
-  flag3 = new Flag(xCords.get(2), yCords.get(2));  
-  flag4 = new Flag(xCords.get(3), yCords.get(3));  
-  flag5 = new Flag(xCords.get(4), yCords.get(4));  
-  flag6 = new Flag(xCords.get(5), yCords.get(5));  
-  flag7 = new Flag(xCords.get(6), yCords.get(6));  
-  flag8 = new Flag(xCords.get(7), yCords.get(7));
-  flag9 = new Flag(xCords.get(8), yCords.get(8));  
+  flag1 = new Flag(xCords.get(0), yCords.get(0), flagWidth.get(0), flagHeight.get(0));  
+  flag2 = new Flag(xCords.get(1), yCords.get(1), flagWidth.get(1), flagHeight.get(1));  
+  flag3 = new Flag(xCords.get(2), yCords.get(2), flagWidth.get(2), flagHeight.get(2));  
+  flag4 = new Flag(xCords.get(3), yCords.get(3), flagWidth.get(3), flagHeight.get(3));  
+  flag5 = new Flag(xCords.get(4), yCords.get(4), flagWidth.get(4), flagHeight.get(4));  
+  //flag6 = new Flag(xCords.get(5), yCords.get(5), flagWidth.get(5), flagHeight.get(5));  
+  //flag7 = new Flag(xCords.get(6), yCords.get(6), flagWidth.get(6), flagHeight.get(6));  
+  //flag8 = new Flag(xCords.get(7), yCords.get(7), flagWidth.get(7), flagHeight.get(7));
+  //flag9 = new Flag(xCords.get(8), yCords.get(8), flagWidth.get(8), flagHeight.get(8));  
   
 }
 class Flag
 { 
-  int x, y;
+  int x, y, w, h;
   int c=10;
-  int h = 40;
-  int w = 600;
   int margin = h/3;
   int margin2 =15;
   int k = 1;
   
-  Flag(int xpos, int ypos)
+  Flag(int xpos, int ypos, int width1, int height1)
   {
     x = xpos;
     y = ypos;
+    w = width1;
+    h = height1;
   }
   void display()
   {
@@ -105,14 +119,6 @@ class Flag
       fill(colourH.get(i),colourS.get(i),colourB.get(i));
       stroke(colourH.get(i),colourS.get(i),colourB.get(i));
       triangle(x-i*(h/2),y+(h*3)-margin2, x-w/2, y-margin+i*(h/2), x-w/2,y+(h*6)-margin-i*(h/2));
-      if (k==1)
-      {k = 40;}
-      else if (k==40)
-      {k = 240;}
-      else if (k==240)
-      {k=20;}
-      else if(k==0)
-      {k=1;}
     }
     noFill();
     strokeWeight(5);
@@ -129,9 +135,9 @@ void draw()
   flag3.display();
   flag4.display();
   flag5.display();
-  flag6.display();
-  flag7.display();
-  flag8.display();
-  flag9.display();
+  //flag6.display();
+  //flag7.display();
+  //flag8.display();
+  //flag9.display();
   
 }
