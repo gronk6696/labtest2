@@ -7,7 +7,7 @@ void setup()
   colorMode(HSB);
   rectMode(CENTER);
 
-  for(int i = 100; i <= h*6; i = i+h)
+  for(int i = 10+h; i <= (h*6)+10; i = i+h)
   {
     fill(c,255,255);
     stroke(c,255,255);
@@ -20,11 +20,23 @@ void setup()
     c = 205;
     }
   }
+  stroke(0);
+  fill(0);
+  triangle(300,(h*3)+25,175,25,175,(h*6)+25);
+  stroke(20,100,100);
+  fill(20,100,100);
+  triangle(300-(h/2),(h*3)+25,175,25+(h/2),175,(h*6)+25-(h/2));
+  stroke(240,85,255);
+  fill(240,85,255);
+  triangle(300-2*(h/2),(h*3)+25,175,25+2*(h/2),175,(h*6)+25-2*(h/2));
+  stroke(30,240,240);
+  fill(40,255,240);
+  triangle(300-3*(h/2),(h*3)+25,175,25+3*(h/2),175,(h*6)+25-3*(h/2));
+  
 }
 int c=10;
-int h = 40;
-   
-  
+int h = 30;
+
 
 void draw()
 {
