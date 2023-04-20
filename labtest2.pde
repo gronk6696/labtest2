@@ -141,3 +141,7 @@ void draw()
   //flag9.display();
   
 }
+
+//NOTES:
+//couldn't use the array lists or figure out how to do loops and arrays together, i think i missed that class :(
+//I also misunderstood the question towards the end and made lists for each of the co-ordinates, instead of a list for each data set.
