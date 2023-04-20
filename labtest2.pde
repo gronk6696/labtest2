@@ -5,21 +5,28 @@ void setup()
   size(1000, 600);
   background(255);
   colorMode(HSB);
-  
+  rectMode(CENTER);
 
-}
-int c = 10;
-void draw()
-{
-  for(int i = 100; i >= 250; i = i+20)
+  for(int i = 100; i <= h*6; i = i+h)
   {
-    fill(c, 255,255);
+    fill(c,255,255);
     stroke(c,255,255);
-    rect(100,i,250,30);
+    rect(300,i,250,h);
+    if (c == 205)
+    {c = 5;}
     c = c*2;
     if (c > 255)
     {
     c = 205;
     }
   }
+}
+int c=10;
+int h = 40;
+   
+  
+
+void draw()
+{
+  
 }
